@@ -24,15 +24,14 @@ class Stack
     cout<<value;
              
  	if(top<Max-1)
- 	 {
- 	   
+ 	 {	   
        tack[top+1]=value;
        top=top+1;
  	 }
  	else
  	 {
- 	 	cout<<"stack is full";
- 	 	return;
+ 	   cout<<"stack is full (overflow)";
+	   return;
  	 }	
  }
  void Stack::pop()
@@ -41,10 +40,11 @@ class Stack
      if(top>-1)
       {
       	top=top-1;
+		cout<<tack[top]<<" is poped";
       }
      else
       {
-        cout<<"stack is empty";
+        cout<<"stack is empty (underflow)";
       }
   } 
 
@@ -53,7 +53,7 @@ void Stack::show()
  	cout<<"******"<<endl;
  	for(int i=0;i<=top;i++)
  	 {
- 	 	cout<<tack[i]<<endl;
+		cout<<tack[i]<<endl;
  	 }
  	cout<<"******";
  }
